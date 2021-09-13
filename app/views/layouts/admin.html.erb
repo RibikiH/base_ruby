@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <%=render '/layouts/head'%>
+  <%= stylesheet_link_tag 'admin', media: 'all'%>
+  <%= javascript_include_tag 'admin' %>
+  <title><%=Admin.model_name.human%> :: 振込サービス</title>
+</head>
+
+<body>
+<%=render '/layouts/env'%>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-3">
+  <%=link_to image_tag('kms_logo.png'), admin_root_path, {class: "navbar-brand"}%>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto">
+
+    </ul>
+
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <div class="btn-group mr-2">
+          <%=link_to [:edit, controller.namespace, current_admin], class: "btn btn-light", role: "button" do%>
+            <%=current_admin.email%><%=fa_icon('user', class: 'text-muted pl-2')%>
+          <%end%>
+        </div>
+        <%=link_to(fa_icon('power-off', class: 'text-success'), destroy_admin_session_path,
+                   {method: :delete, class: 'btn btn-light', role: 'button', data: {confirm: 'ログアウトしますか？'}})%>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <%if notice%><div class="alert alert-success" role="alert"><%= notice %></div><%end%>
+      <%if alert%><div class="alert alert-danger" role="alert"><%= alert %></div><%end%>
+    </div>
+  </div>
+
+  <%= yield %>
+</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col">
+    <ul class="nav flex-column">
+      <%- if controller_name != 'sessions' %>
+        <li class="nav-item">
+          <%= link_to "ログインはこちら", new_session_path(resource_name), class: "nav-link" %>
+        </li>
+      <% end -%>
+      
+      <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+        <li class="nav-item">
+          <%= link_to "パスワード忘れはこちら", new_password_path(resource_name), class: "nav-link" %>
+        </li>
+      <% end -%>
+      
+      <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+        <li class="nav-item">
+          <%= link_to "ロック解除はこちら", new_unlock_path(resource_name), class: "nav-link" %>
+        </li>
+      <% end -%>
+    </ul>
+  </div>
+</div>

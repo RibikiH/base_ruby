@@ -1,0 +1,66 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap";
+@import "font-awesome";
+@import "jquery.datetimepicker.min";
+
+.col-tbl-1 {
+    width: 8.33333%;
+}
+
+.col-tbl-2 {
+    width: 16.66667%;
+}
+
+.col-tbl-3 {
+    width: 25%;
+}
+
+.col-tbl-4 {
+    width: 33.33333%;
+}
+
+.col-tbl-5 {
+    width: 41.66667%;
+}
+
+.col-tbl-6 {
+    width: 50%;
+}
+
+.col-tbl-7 {
+    width: 58.33333%;
+}
+
+.col-tbl-8 {
+    width: 66.66667%;
+}
+
+.col-tbl-9 {
+    width: 75%;
+}
+
+.col-tbl-10 {
+    width: 83.33333%;
+}
+
+.col-tbl-11 {
+    width: 91.66667%;
+}
+
+.col-tbl-12 {
+    width: 100%;
+}

@@ -1,0 +1,16 @@
+<div class="card border-primary">
+  <h3 class="card-header bg-primary text-white">パスワード再設定</h3>
+  <div class="card-body">
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <fieldset class="form-group">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+      </fieldset>
+      
+      <%= f.submit "確認メールを送信", {class: 'btn btn-primary btn-lg'} %>
+        
+    <% end %>
+  </div>
+</div>
+
+<%= render "admins/shared/links" %>
